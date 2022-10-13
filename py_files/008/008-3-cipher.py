@@ -1,4 +1,4 @@
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 def ceasar(message_to_code, shift_number, code_type):
   #titled ceasar for ceasar's cipher
@@ -6,10 +6,15 @@ def ceasar(message_to_code, shift_number, code_type):
   for letter in message_to_code:
     if letter in alphabet:
       position = alphabet.index(letter)
+      zulu_var = len(alphabet) #essentially the last letter position
       if code_type == "encode":
         new_position = position + shift_number
+        if new_position > zulu_var:
+          new_position = new_position - zulu_var
       else: #decode
         new_position = position - shift_number
+        if new_position > zulu_var:
+          new_position = new_position - zulu_var
       new_letter = alphabet[new_position]
       encoded_message += new_letter
     else:
@@ -31,7 +36,8 @@ while not game_end:
     print(coded)
   else:
     print(f"You can only choose to encode or decode a message. You can't choose '{direction}.'")
-  start_again = input("Do you want to encode/decode another message? \nType Y for yes and N for no to continue...").capitalize
-  if start_again == "No":
+
+  start_again = input("\nDo you want to encode/decode another message? \nType Y for yes and N for no to continue...").capitalize
+  if start_again == "N" or start_again == "NO":
     game_end = True
     print("Goodbye.")
