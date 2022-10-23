@@ -1,6 +1,6 @@
-from turtle import Screen, Turtle
+import turtle as tu
 
-timmy = Turtle()
+timmy = tu.Turtle()
 
 timmy.shape("turtle")
 timmy.color("#0080ff")
@@ -11,5 +11,5 @@ for ea in range(4):
 
 
 
-screen = Screen()
+screen = tu.Screen()
 screen.exitonclick()
