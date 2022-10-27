@@ -2,8 +2,6 @@ from turtle import Screen
 from snake import Snake
 import time
 
-DISTANCE = 20
-
 scr = Screen()
 scr.setup(width=688, height=688)
 scr.bgcolor("black")
