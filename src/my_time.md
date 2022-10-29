@@ -9,3 +9,7 @@
 
 - `09:00` //_Let's start_
 - `14:41` Finished Day18
+
+## Thursday 27 October
+
+- `17:51` //_Good morning_
