@@ -1,13 +1,10 @@
-from turtle import Screen
-from time import sleep
-
+from turtle import Screen as scr
 from scoreboard import Scoreboard
 import paddle
 import ball
 from scoreboard import Scoreboard
 
 # Screen setup
-scr = Screen()
 WIN_HEIGHT = 600
 WIN_WIDTH = 800
 PADDING = 10 # border padding pixels
