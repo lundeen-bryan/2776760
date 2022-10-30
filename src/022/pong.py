@@ -1,48 +1,80 @@
 from turtle import Screen
+from time import sleep
+
+from scoreboard import Scoreboard
 import paddle
 import ball
+from scoreboard import Scoreboard
 
+# Screen setup
 scr = Screen()
-
 WIN_HEIGHT = 600
 WIN_WIDTH = 800
-CURRENT_HEIGHT = scr.window_height()
-R_PADDLE_START = int(scr.window_width()/2) - 24
-L_PADDLE_START = (int(scr.window_width()/2) - 24) *-1
-BORDER = int(WIN_HEIGHT / 2)
 PADDING = 10 # border padding pixels
-
-scr.setup(WIN_WIDTH, WIN_HEIGHT)
+scr.setup(width=WIN_WIDTH, height=WIN_HEIGHT)
 scr.bgcolor("black")
 scr.title("Pong")
 scr.listen()
 
+# Setup positive boundaries
+TOP = int(WIN_HEIGHT / 2) - PADDING
+RIGHT = int(WIN_WIDTH / 2) - PADDING
+
+# Negative boundaries seem off by 5
+BOTTOM = ((int(WIN_HEIGHT / 2)) * -1) + PADDING - 5
+LEFT = ((int(WIN_WIDTH / 2)) * -1) + PADDING
+
+score = Scoreboard(TOP, WIN_WIDTH, "white")
+
+# Create paddles slightly inside padding
+R_PADDLE_START = RIGHT - PADDING
+L_PADDLE_START = LEFT + PADDING
 L_paddle = paddle.Paddle(L_PADDLE_START)
 R_paddle = paddle.Paddle(R_PADDLE_START)
-
 scr.onkey(R_paddle.up, "Up" )
 scr.onkey(R_paddle.down, "Down")
 scr.onkey(L_paddle.up, "w" )
 scr.onkey(L_paddle.down, "s")
 
+# Create ball
 ball = ball.Ball()
 
-game_on = True
-while game_on:
+# Start game, loop til game_on = False
+while True:
   ball.move()
+  # detect ball hitting walls
   if (
-      ball.ycor() > (BORDER - PADDING)
-      or ball.ycor() < ((BORDER * -1) + PADDING)
+      ball.ycor() > (TOP - PADDING)
+      or ball.ycor() < (BOTTOM + PADDING)
   ):
     ball.y_bounce()
+  # detect ball hitting paddles
   if (
       ball.distance(R_paddle) < 35
-      and ball.xcor() > (BORDER - PADDING)
+      and ball.ycor() < (TOP)
       or ball.distance(L_paddle) < 35
-      and ball.xcor() < ((BORDER * -1) + PADDING)
+      and ball.ycor() < (TOP)
   ):
+    ball.faster_ball() # make ball faster
     ball.x_bounce()
-
+  # detect ball going past paddles
+  if (
+    ball.xcor() > RIGHT
+    and ball.ycor() < TOP
+    or ball.xcor() < LEFT
+    and ball.ycor() > BOTTOM
+  ):
+    # When a player wins, overwrite the current score
+    # in black color, then write again in white.
+    if ball.xcor() > 0:
+      score.erase_score()
+      score.score1 +=1
+      score.show_score()
+    else:
+      score.erase_score()
+      score.score2 +=1
+      score.show_score()
+    ball.reset_position()
 
 
 
