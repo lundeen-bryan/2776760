@@ -11,8 +11,17 @@ class Player(Turtle):
         self.shape("turtle")
         self.color("#008000")
         self.penup()
-        self.goto(STARTING_POSITION)
+        self.starting_line()
         self.seth(90)
 
     def move(self):
         self.fd(MOVE_DISTANCE)
+
+    def crossed_finish_line(self):
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            return False
+
+    def starting_line(self):
+        self.goto(STARTING_POSITION)
