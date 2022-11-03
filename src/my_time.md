@@ -13,3 +13,7 @@
 ## Thursday 27 October
 
 - `17:51` //_Good morning_
+
+## Wednesday 02 November
+
+- `09:29` //_Let's go!_
