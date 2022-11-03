@@ -14,7 +14,8 @@ scr.title("Turtle Game")
 scr.listen()
 
 player = Player()
-car = CarManager()
+cars = CarManager()
+scoreboard = Scoreboard()
 
 scr.onkey(player.move, "Up" )
 
@@ -22,8 +23,22 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     scr.update()
-    car.create_car()
-    car.move_car()
+
+    cars.create_car()
+    cars.move_car()
+
+    #Detect collision with car
+    for car in cars.cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+
+    # Detect successful crossing
+    if player.crossed_finish_line():
+        player.starting_line()
+        cars.level_up()
+        scoreboard.increase_level()
+
+
 
 
 
