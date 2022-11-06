@@ -22,3 +22,7 @@ main()
 while input("Would you like check another word? (Y)es/(N)o > ").upper() == "Y":
   # if they want to check again call main
   main()
+
+
+''' ./test/test.py
+'''

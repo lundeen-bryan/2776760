@@ -26,3 +26,4 @@ print(f"Result2: {result2}")
 
 result = [int(file) for file in result1 if file in result2]
 print(result)
+
