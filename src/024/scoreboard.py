@@ -1,5 +1,5 @@
 from turtle import Turtle
-import file_control as fc
+import _file_control as fc
 
 ALIGNMENT = "center"
 FONT = ("Courier", 24, "normal")

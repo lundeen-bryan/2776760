@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0, "./src/024/") # imports file_control.py from this parent folder
 
-import file_control as fc
+import _file_control as fc
 
 STARTING_LETTER_PATH = "../024/mail_merge/Input/Letters/starting_letter.txt"
 OUTPUT_FOLDER = "./src/024/mail_merge/Output/ReadyToSend/"

@@ -51,9 +51,7 @@ title = "U.S. States Game"
 prompt = "What's another state name?"
 # convert ans to title case
 current_guess = STATES_COUNT
-states_remaining = []
-for ea in STATES_LIST:
-  states_remaining.append(ea)
+states_remaining = [states_remaining.append(states) for states in STATES_LIST]
 while len(states_remaining) > 0:
   user_guess = scr.textinput(title=title, prompt=prompt).title()
   if user_guess == "Exit":
