@@ -76,26 +76,26 @@ class PasswordApplication:
 
     def create_textbox(
         self,
-        box_width=10,
-        box_height=1,
+        default_text="",
+        txtbox_width=10,
+        txtbox_height=1,
         foreground="black",
         background="white",
         font_name="Tahoma",
         font_size=12,
         font_style="normal",
-        box_column=0,
-        box_row=0,
+        txtbox_column=0,
+        txtbox_row=0,
         x_padding=0,
         y_padding=0,
         span_columns=1,
-        sticky_direction="w",
+        txtbox_align="w",
         grid_xpad=0,
         grid_ypad=0,
-        default_text="",
     ):
         self.textbox = tk.Text(
-            width=box_width,
-            height=box_height,
+            width=txtbox_width,
+            height=txtbox_height,
             font=(font_name, font_size, font_style),
             fg=foreground,
             bg=background,
@@ -104,10 +104,10 @@ class PasswordApplication:
             highlightthickness=0,
         )
         self.textbox.grid(
-            row=box_row,
-            column=box_column,
+            row=txtbox_row,
+            column=txtbox_column,
             columnspan=span_columns,
-            sticky=sticky_direction,
+            sticky=txtbox_align,
             padx=grid_xpad,
             pady=grid_ypad,
         )
