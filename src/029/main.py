@@ -9,7 +9,6 @@ import sys
 sys.path.insert(0, "./src/")  # imports file_control.py from this parent folder
 from _clear_console import clear
 import dictionaries as dc
-import pyperclip
 
 # =========  End of Import Section      =======
 
@@ -24,9 +23,6 @@ IMG_HEIGHT = int(IMG.height / 2)
 IMG_WIDTH = int(IMG.width / 2)
 FONT_NAME = "Tahoma"
 BACKGROUND = "white"
-letters = ""
-numbers = ""
-symbols = ""
 # =========  End of Constants Section  =======
 
 
@@ -54,20 +50,7 @@ def update():
 
 def create_label(arguments_list):
     """Takes a list of items and unpacks it to use as arguments to create a label
-
-    Args:
-        display_text (string): the text on the label
-        label_width (int): width of label, should be # of characters or the longest in the column
-        label_height (int): height of label, usually measured by lines default=1
-        foreground (string): color of text
-        background (string): color of background
-        font_name (string): font type for text on label
-        font_size (int): size in pixels of font
-        font_style (string): either bold, italic, normal
-        label_column (int): location on the grid in column
-        label_row (int): location on the grid in row
-        alignment (string): w gives left alignment of text, e gives right alignment
-
+    See dictionaries.py for all parameters
     Calls to:
          Sends list to app.create_label
     """
@@ -77,19 +60,7 @@ def create_label(arguments_list):
 
 def create_textbox(arguments_list):
     """Takes a list of items and unpacks it to use as arguments to create a textbox
-
-    Args:
-        display_text (string): the text on the textbox
-        box_width (int): width of textbox, should be # of characters or the longest in the column
-        box_height (int): height of textbox, usually measured by lines default=1
-        foreground (string): color of text
-        background (string): color of background
-        font_name (string): font type for text on textbox
-        font_size (int): size in pixels of font
-        font_style (string): either bold, italic, normal
-        box_column (int): location on the grid in column
-        box_row (int): location on the grid in row
-
+    See dictionaries.py for all parameters
     Calls to:
          Sends list to app.create_textbox
     """
@@ -99,19 +70,7 @@ def create_textbox(arguments_list):
 
 def create_button(arguments_list):
     """Takes a list of items and unpacks it to use as arguments to create a textbox
-
-    Args:
-        display_text (string): the text on the textbox
-        box_width (int): width of textbox, should be # of characters or the longest in the column
-        box_height (int): height of textbox, usually measured by lines default=1
-        foreground (string): color of text
-        background (string): color of background
-        font_name (string): font type for text on textbox
-        font_size (int): size in pixels of font
-        font_style (string): either bold, italic, normal
-        box_column (int): location on the grid in column
-        box_row (int): location on the grid in row
-
+    See dictionaries.py for all parameters
     Calls to:
          Sends list to app.create_textbox
     """
@@ -120,6 +79,7 @@ def create_button(arguments_list):
 
 
 def check_character_len():
+    app.check_character_len
     verified_length = pw.password_len_verified()
     if verified_length == True:
         password.insert(
@@ -127,12 +87,12 @@ def check_character_len():
         )
 
 
+
 # =========  End of Functions Section  =======
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def button_pressed(button):
     pass
-
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
