@@ -1,125 +1,79 @@
-"""========================================="""
-# =            Import Section                  =
-"""========================================="""
-from PIL import Image
-import password_application_cls
-import generate_password_cls
-import sys
-
-sys.path.insert(0, "./src/")  # imports file_control.py from this parent folder
-from _clear_console import clear
-import dictionaries as dc
-
-# =========  End of Import Section      =======
-
-"""========================================="""
-# =       Constants Section                    =
-"""========================================="""
-FILEPATH = "./src/029/logo.png"
-IMG = Image.open(FILEPATH)
-WIN_HEIGHT = IMG.height  # add 10 for padding
-WIN_WIDTH = IMG.width
-IMG_HEIGHT = int(IMG.height / 2)
-IMG_WIDTH = int(IMG.width / 2)
-FONT_NAME = "Tahoma"
-BACKGROUND = "white"
-# =========  End of Constants Section  =======
-
-
-"""========================================="""
-# =           Functions Section                =
-"""========================================="""
-
-
-def update():
-    """After the tkinter obj is created, this updates the values passed from main"""
-    app.frame.after(
-        1000,
-        app.update_values(
-            WIN_HEIGHT,
-            WIN_WIDTH,
-            FILEPATH,
-            BACKGROUND,
-            IMG_HEIGHT,
-            IMG_WIDTH,
-            25,
-            25,
-        ),
-    )
-
-
-def create_label(arguments_list):
-    """Takes a list of items and unpacks it to use as arguments to create a label
-    See dictionaries.py for all parameters
-    Calls to:
-         Sends list to app.create_label
-    """
-    app.create_label(*arguments_list)
-    app.frame.update()
-
-
-def create_textbox(arguments_list):
-    """Takes a list of items and unpacks it to use as arguments to create a textbox
-    See dictionaries.py for all parameters
-    Calls to:
-         Sends list to app.create_textbox
-    """
-    app.create_textbox(*arguments_list)
-    app.frame.update()
-
-
-def create_button(arguments_list):
-    """Takes a list of items and unpacks it to use as arguments to create a textbox
-    See dictionaries.py for all parameters
-    Calls to:
-         Sends list to app.create_textbox
-    """
-    app.create_button(*arguments_list)
-    app.frame.update()
-
-
-def check_character_len():
-    app.check_character_len
-    verified_length = pw.password_len_verified()
-    if verified_length == True:
-        password.insert(
-            0, pw.get_all_characters(letter_count, number_count, symbol_count)
-        )
-
-
-
-# =========  End of Functions Section  =======
+from tkinter import *
+from tkinter import messagebox
+from random import choice, randint, shuffle
+import pyperclip
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-def button_pressed(button):
-    pass
+
+#Password Generator Project
+def generate_password():
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+    password_letters = [choice(letters) for _ in range(randint(8, 10))]
+    password_symbols = [choice(symbols) for _ in range(randint(2, 4))]
+    password_numbers = [choice(numbers) for _ in range(randint(2, 4))]
+
+    password_list = password_letters + password_symbols + password_numbers
+    shuffle(password_list)
+
+    password = "".join(password_list)
+    password_entry.insert(0, password)
+    pyperclip.copy(password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def save():
+
+    website = website_entry.get()
+    email = email_entry.get()
+    password = password_entry.get()
+
+    if len(website) == 0 or len(password) == 0:
+        messagebox.showinfo(title="Oops", message="Please make sure you haven't left any fields empty.")
+    else:
+        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail: {email} "
+                                                      f"\nPassword: {password} \nIs it ok to save?")
+        if is_ok:
+            with open("data.txt", "a") as data_file:
+                data_file.write(f"{website} | {email} | {password}\n")
+                website_entry.delete(0, END)
+                password_entry.delete(0, END)
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
-if __name__ == "__main__":
-    clear()
-    app = password_application_cls.PasswordApplication()
-    pw = generate_password_cls.GeneratePassword()
-    update()
-    create_label(dc.label_dictionary["for_website_label"].values())
-    create_label(dc.label_dictionary["for_email_label"].values())
-    create_label(dc.label_dictionary["for_password_label"].values())
-    create_label(dc.label_dictionary["for_letter_count_label"].values())
-    create_label(dc.label_dictionary["for_number_count_label"].values())
-    create_label(dc.label_dictionary["for_symbol_count_label"].values())
-    create_label(dc.label_dictionary["for_alias_textbox_label"].values())
-    letter_count = create_textbox(dc.textbox_dictionary["for_letter_count_textbox"].values())
-    number_count = create_textbox(dc.textbox_dictionary["for_number_count_textbox"].values())
-    symbol_count = create_textbox(dc.textbox_dictionary["for_symbol_count_textbox"].values())
-    alias = create_textbox(dc.textbox_dictionary["for_alias_textbox"].values())
-    website = create_textbox(dc.textbox_dictionary["for_website_textbox"].values())
-    email = create_textbox(dc.textbox_dictionary["for_email_textbox"].values())
-    password = create_textbox(dc.textbox_dictionary["for_password_textbox"].values())
-    generate_btn = create_button(dc.button_dictionary["for_password_button"].values())
-    save_btn = create_button(dc.button_dictionary["for_save_button"].values())
-    reset_btn = create_button(dc.button_dictionary["for_reset_button"].values())
-    exit_btn = create_button(dc.button_dictionary["for_exit_button"].values())
+window = Tk()
+window.title("Password Manager")
+window.config(padx=50, pady=50)
 
-    app.frame.mainloop()
+canvas = Canvas(height=200, width=200)
+logo_img = PhotoImage(file="logo.png")
+canvas.create_image(100, 100, image=logo_img)
+canvas.grid(row=0, column=1)
+
+#Labels
+website_label = Label(text="Website:")
+website_label.grid(row=1, column=0)
+email_label = Label(text="Email/Username:")
+email_label.grid(row=2, column=0)
+password_label = Label(text="Password:")
+password_label.grid(row=3, column=0)
+
+#Entries
+website_entry = Entry(width=35)
+website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.focus()
+email_entry = Entry(width=35)
+email_entry.grid(row=2, column=1, columnspan=2)
+email_entry.insert(0, "angela@gmail.com")
+password_entry = Entry(width=21)
+password_entry.grid(row=3, column=1)
+
+# Buttons
+generate_password_button = Button(text="Generate Password", command=generate_password)
+generate_password_button.grid(row=3, column=2)
+add_button = Button(text="Add", width=36, command=save)
+add_button.grid(row=4, column=1, columnspan=2)
+
+window.mainloop()
