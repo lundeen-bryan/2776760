@@ -1,0 +1,406 @@
+{
+    "affaire": {
+        "English": "case",
+        "French": "affaire"
+    },
+    "aide": {
+        "English": "help",
+        "French": "aide"
+    },
+    "aimerais": {
+        "English": "would like to",
+        "French": "aimerais"
+    },
+    "arrivé": {
+        "English": "come",
+        "French": "arrivé"
+    },
+    "arrêter": {
+        "English": "Stop",
+        "French": "arrêter"
+    },
+    "attendez": {
+        "English": "Wait",
+        "French": "attendez"
+    },
+    "attention": {
+        "English": "Warning",
+        "French": "attention"
+    },
+    "aucun": {
+        "English": "no",
+        "French": "aucun"
+    },
+    "aucune": {
+        "English": "any",
+        "French": "aucune"
+    },
+    "aujourd'hui": {
+        "English": "today",
+        "French": "aujourd'hui"
+    },
+    "aura": {
+        "English": "will have",
+        "French": "aura"
+    },
+    "belle": {
+        "English": "beautiful",
+        "French": "belle"
+    },
+    "boulot": {
+        "English": "job",
+        "French": "boulot"
+    },
+    "bureau": {
+        "English": "office",
+        "French": "bureau"
+    },
+    "bébé": {
+        "English": "baby",
+        "French": "bébé"
+    },
+    "car": {
+        "English": "because",
+        "French": "car"
+    },
+    "cause": {
+        "English": "cause",
+        "French": "cause"
+    },
+    "chambre": {
+        "English": "bedroom",
+        "French": "chambre"
+    },
+    "chaque": {
+        "English": "each",
+        "French": "chaque"
+    },
+    "chercher": {
+        "English": "search",
+        "French": "chercher"
+    },
+    "chérie": {
+        "English": "sweetheart",
+        "French": "chérie"
+    },
+    "compris": {
+        "English": "understood",
+        "French": "compris"
+    },
+    "compte": {
+        "English": "account",
+        "French": "compte"
+    },
+    "corps": {
+        "English": "body",
+        "French": "corps"
+    },
+    "croire": {
+        "English": "believe",
+        "French": "croire"
+    },
+    "côté": {
+        "English": "side",
+        "French": "côté"
+    },
+    "demande": {
+        "English": "request",
+        "French": "demande"
+    },
+    "demandé": {
+        "English": "request",
+        "French": "demandé"
+    },
+    "devant": {
+        "English": "in front of",
+        "French": "devant"
+    },
+    "devrait": {
+        "English": "should",
+        "French": "devrait"
+    },
+    "dirait": {
+        "English": "would say",
+        "French": "dirait"
+    },
+    "donne": {
+        "English": "given",
+        "French": "donne"
+    },
+    "donner": {
+        "English": "give",
+        "French": "donner"
+    },
+    "donné": {
+        "English": "given",
+        "French": "donné"
+    },
+    "dont": {
+        "English": "whose",
+        "French": "dont"
+    },
+    "droit": {
+        "English": "law",
+        "French": "droit"
+    },
+    "eau": {
+        "English": "water",
+        "French": "eau"
+    },
+    "endroit": {
+        "English": "place",
+        "French": "endroit"
+    },
+    "enfant": {
+        "English": "child",
+        "French": "enfant"
+    },
+    "enfin": {
+        "English": "finally",
+        "French": "enfin"
+    },
+    "espère": {
+        "English": "hope",
+        "French": "espère"
+    },
+    "eux": {
+        "English": "them",
+        "French": "eux"
+    },
+    "façon": {
+        "English": "way",
+        "French": "façon"
+    },
+    "filles": {
+        "English": "girls",
+        "French": "filles"
+    },
+    "fin": {
+        "English": "end",
+        "French": "fin"
+    },
+    "frère": {
+        "English": "brother",
+        "French": "frère"
+    },
+    "genre": {
+        "English": "kind",
+        "French": "genre"
+    },
+    "gros": {
+        "English": "large",
+        "French": "gros"
+    },
+    "heures": {
+        "English": "hours",
+        "French": "heures"
+    },
+    "histoire": {
+        "English": "history",
+        "French": "histoire"
+    },
+    "jouer": {
+        "English": "to play",
+        "French": "jouer"
+    },
+    "laisse": {
+        "English": "leash",
+        "French": "laisse"
+    },
+    "laisser": {
+        "English": "let",
+        "French": "laisser"
+    },
+    "leurs": {
+        "English": "their",
+        "French": "leurs"
+    },
+    "loin": {
+        "English": "far",
+        "French": "loin"
+    },
+    "longtemps": {
+        "English": "long time",
+        "French": "longtemps"
+    },
+    "main": {
+        "English": "hand",
+        "French": "main"
+    },
+    "mari": {
+        "English": "husband",
+        "French": "mari"
+    },
+    "matin": {
+        "English": "morning",
+        "French": "matin"
+    },
+    "mettre": {
+        "English": "to put",
+        "French": "mettre"
+    },
+    "minutes": {
+        "English": "minutes",
+        "French": "minutes"
+    },
+    "mis": {
+        "English": "placed",
+        "French": "mis"
+    },
+    "mois": {
+        "English": "month",
+        "French": "mois"
+    },
+    "nouvelle": {
+        "English": "new",
+        "French": "nouvelle"
+    },
+    "pardon": {
+        "English": "sorry",
+        "French": "pardon"
+    },
+    "parle": {
+        "English": "speak",
+        "French": "parle"
+    },
+    "parlé": {
+        "English": "speak",
+        "French": "parlé"
+    },
+    "parti": {
+        "English": "left",
+        "French": "parti"
+    },
+    "partie": {
+        "English": "part",
+        "French": "partie"
+    },
+    "pendant": {
+        "English": "while",
+        "French": "pendant"
+    },
+    "pensais": {
+        "English": "thought",
+        "French": "pensais"
+    },
+    "perdu": {
+        "English": "lost",
+        "French": "perdu"
+    },
+    "place": {
+        "English": "square",
+        "French": "place"
+    },
+    "plutôt": {
+        "English": "rather",
+        "French": "plutôt"
+    },
+    "point": {
+        "English": "point",
+        "French": "point"
+    },
+    "police": {
+        "English": "police",
+        "French": "police"
+    },
+    "pourrais": {
+        "English": "could",
+        "French": "pourrais"
+    },
+    "pouvoir": {
+        "English": "power",
+        "French": "pouvoir"
+    },
+    "premier": {
+        "English": "first",
+        "French": "premier"
+    },
+    "première": {
+        "English": "first",
+        "French": "première"
+    },
+    "revoir": {
+        "English": "meet again",
+        "French": "revoir"
+    },
+    "savais": {
+        "English": "knew",
+        "French": "savais"
+    },
+    "seulement": {
+        "English": "only",
+        "French": "seulement"
+    },
+    "sois": {
+        "English": "be",
+        "French": "sois"
+    },
+    "suite": {
+        "English": "after",
+        "French": "suite"
+    },
+    "tellement": {
+        "English": "so much",
+        "French": "tellement"
+    },
+    "terre": {
+        "English": "Earth",
+        "French": "terre"
+    },
+    "tiens": {
+        "English": "here",
+        "French": "tiens"
+    },
+    "train": {
+        "English": "train",
+        "French": "train"
+    },
+    "trouve": {
+        "English": "find",
+        "French": "trouve"
+    },
+    "type": {
+        "English": "type",
+        "French": "type"
+    },
+    "venez": {
+        "English": "come",
+        "French": "venez"
+    },
+    "venu": {
+        "English": "came",
+        "French": "venu"
+    },
+    "vers": {
+        "English": "towards",
+        "French": "vers"
+    },
+    "vieux": {
+        "English": "old",
+        "French": "vieux"
+    },
+    "ville": {
+        "English": "city",
+        "French": "ville"
+    },
+    "voici": {
+        "English": "here is",
+        "French": "voici"
+    },
+    "vont": {
+        "English": "will",
+        "French": "vont"
+    },
+    "yeux": {
+        "English": "eyes",
+        "French": "yeux"
+    },
+    "écoute": {
+        "English": "listen",
+        "French": "écoute"
+    },
+    "étaient": {
+        "English": "were",
+        "French": "étaient"
+    }
+}

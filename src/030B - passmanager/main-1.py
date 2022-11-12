@@ -70,7 +70,7 @@ def save():
 
         else:
             # if the file exists then update it
-            data.update(new_data)
+            data.replace(data, data)
             with open_json("w") as data_file:
                 json.dump(data, data_file, indent=4)
 
