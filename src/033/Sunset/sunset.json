@@ -1,0 +1,15 @@
+{
+    "results": {
+        "sunrise": "6:37:51 AM",
+        "sunset": "4:50:41 PM",
+        "solar_noon": "11:44:16 AM",
+        "day_length": "10:12:50",
+        "civil_twilight_begin": "6:11:13 AM",
+        "civil_twilight_end": "5:17:19 PM",
+        "nautical_twilight_begin": "5:39:23 AM",
+        "nautical_twilight_end": "5:49:09 PM",
+        "astronomical_twilight_begin": "5:08:10 AM",
+        "astronomical_twilight_end": "6:20:22 PM"
+    },
+    "status": "OK"
+}
